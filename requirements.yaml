@@ -1,4 +1,4 @@
 dependencies:
 - name: argo-app
-  version: 0.3.1
+  version: 0.3.2
   repository: https://yanghoon.github.io/charts
