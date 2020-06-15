@@ -1,0 +1,14 @@
+# The 'spec' section of ArgoCD Application CRD
+project: "default"
+source:
+  repoURL: https://charts.bitnami.com/bitnami
+  chart: kafka
+  targetRevision: 11.2.0
+  helm:
+    parameters:
+      service.type: NodePort
+      service.nodePort: 30092
+      advertiseListeners: PLANETEXT://kafka:9092
+destination:
+  server: "https://kubernetes.default.svc"
+  namespace: kafka

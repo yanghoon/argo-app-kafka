@@ -1,0 +1,14 @@
+# The 'spec' section of ArgoCD Application CRD
+project: default
+source:
+  repoURL: https://kubernetes-charts.storage.googleapis.com
+  chart: kafka-manager
+  targetRevision: 2.3.1
+  helm:
+    parameters:
+      zkHosts: kafka-zookeeper:2181
+      service.type: NodePort
+      ingress.enabled: true
+destination:
+  server: "https://kubernetes.default.svc"
+  namespace: kafka
